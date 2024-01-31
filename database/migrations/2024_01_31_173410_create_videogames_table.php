@@ -13,10 +13,10 @@ return new class extends Migration
     {
         Schema::create('videogames', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('autore');
-            $table->char('anno' , 4);
-            $table->text('descrizione');
+            $table->string('title');
+            $table->string('author');
+            $table->char('year' , 4);
+            $table->text('description');
             $table->timestamps();
         });
     }

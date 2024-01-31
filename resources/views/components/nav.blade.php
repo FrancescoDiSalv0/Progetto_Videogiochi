@@ -18,7 +18,7 @@
           </a>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="#">Lista giochi</a></li>
-            <li><a class="dropdown-item" href="#">Carica il tuo gioco</a></li>
+            <li><a class="dropdown-item" href="{{route('videogame.form')}}">Carica il tuo gioco</a></li>
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="#">Contattaci</a></li>
           </ul>
