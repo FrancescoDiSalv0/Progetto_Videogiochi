@@ -16,6 +16,9 @@ use App\Http\Controllers\VideogameController;
 */
 
 Route::get('/', [PublicController::class , 'welcome'])->name('welcome');
+
 Route::get("/videogame/form", [VideogameController::class, "videogameForm"])->name("videogame.form"); 
+// rotta di tipo post
+Route::post("/videogame/form/submit",[VideogameController::class, "videogameSubmit"])->name("videogame.submit");
 
-
+Route::get("/videogames/index",[VideogameController::class, "videogameIndex"])->name("videogame.index");
