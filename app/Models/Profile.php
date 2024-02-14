@@ -7,27 +7,19 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class Videogame extends Model
+class Profile extends Model
 {
     use HasFactory;
 
-    protected $fillable = 
     
-    [   
-        'title',
-        // 'author',
-        'year',
-        'description',
-        'img'
+    protected $fillable =
+    [
+        'userimage', 'description','phone'
     ];
 
-
-    
-    //funzione di relazione tra la classe modello Videogame e la classe modello User inversa di una 1-N ovvero
-    //!una 1-1 one to one
+    //!funzione di relazione inversa tra User e il Profile
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
     }
-
 }

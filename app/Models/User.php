@@ -3,10 +3,13 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Laravel\Sanctum\HasApiTokens;
+use Illuminate\Notifications\Notifiable;
+use Illuminate\Database\Eloquent\Relations\HasOne;
+use Symfony\Component\HttpKernel\Profiler\Profile;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Notifications\Notifiable;
-use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable
 {
@@ -42,4 +45,17 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    //!funzione di relazione 1-N uno a molti tra la classe modello User e la classe modello Videogame
+    public function videogames(): HasMany
+    {
+        return $this->hasMany(Videogame::class);
+    }
+
+    //!funzione di relazione 1-1 tra l'utente e il suo profilo di dati aggiuntivi
+    public function profile(): HasOne
+    {
+        return $this->hasOne(Profile::class);
+    }
+    
 }
