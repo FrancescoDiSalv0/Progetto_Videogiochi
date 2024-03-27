@@ -7,7 +7,7 @@
             <div class="col-6">
                 <h1>{{$videogame->title}}</h1>
                 @if ($videogame->user_id === null)
-                <h3 class="card-title">Autore: Pippofranco</h3>  
+                <h3 class="card-title">Autore: Sconosciuto</h3>  
               @else  
                 <h3 class="card-title">Autore: {{$videogame->user->name}}</h3>
               @endif
